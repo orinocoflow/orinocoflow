@@ -7,16 +7,19 @@ app.controller('loginCtrl', function ($scope, session, $location) {
         email: "",
         password: ""
     };
+    $scope.loginError ="";
 
     $scope.login = function(){
-        console.log("OI");
-        session.authorize().then(function(tokenResponse){
-            session.token = tokenResponse.data;
-            session.createSession(session.token).then(function(sessionResponse){
-                console.log(sessionResponse);
-                session.setUser(sessionResponse.data.user);
+        session.authorize($scope.user).then(function(userBind){
+            console.log(userBind.data[0]);
+            if(userBind.data.length > 0) {
+                session.setUser(userBind.data[0].name);
                 $location.path("/home");
-            });
+            }else{
+                $scope.loginError = "USUARIO NAO EXISTE";
+            }
+            }, function(){
+            $scope.loginError = "USUARIO NAO EXISTE";
         });
 
     };

@@ -11,14 +11,14 @@ app.factory("session", ['$http', function($http) {
 
 
 
-    obj.authorize = function(){
+    obj.authorize = function(user){
         //passo login e senha e recebo token
-        return $http.get("teste.json");
+        return $http.post("http://localhost:3000/login", user);
     }
 
-    obj.createSession = function(token){
+    obj.createSession = function(userBind){
       //chama http passando token para criar sessao e recebe sessao criada pela api
-        return $http.get("session.json");
+        obj.user = userBind.name;
     };
 
     obj.setUser = function(name){
