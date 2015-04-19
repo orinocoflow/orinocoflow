@@ -5,15 +5,17 @@
 
         <form >
 
-           <p> Welcome to GOCOOK enjoy it!</p>
+            <p> Welcome to GOCOOK enjoy it!</p>
             <fieldset class="clearfix">
                 <p><span class="fontawesome-user"></span><input type="text" ng-model="user.email"  placeholder="Username" ></p>
                 <p><span class="fontawesome-lock"></span>  <input type="password" ng-model="user.password" placeholder="********"></p>
                 <p> <input type="submit" ng-click="login()" value="Sign In" ></p>
-
+               
             </fieldset>
         </form>
 
         <p>Not a member? <a href="#/cadastrar">Sign up now</a><span class="fontawesome-arrow-right"></span></p>
 
     </div>
+</div>
+    {{loginError}}
