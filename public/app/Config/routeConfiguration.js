@@ -15,6 +15,11 @@ app.config(['$routeProvider',
                     templateUrl: 'app/Views/home.html',
                     controller: 'homeCtrl'
                 })
+            .when('/cadastrar', {
+                title: 'Sing in',
+                templateUrl: 'app/Views/cadastrar.html',
+                controller: 'cadastrarCtrl'
+            })
                 .otherwise({
                     redirectTo: '/error'
                 });
