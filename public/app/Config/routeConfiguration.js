@@ -17,8 +17,8 @@ app.config(['$routeProvider',
                 })
             .when('/cadastrar', {
                 title: 'Sing in',
-                templateUrl: 'app/Views/cadastrar.html',
-                controller: 'cadastrarCtrl'
+                templateUrl: 'app/Views/signUp.html',
+                controller: 'signUpCtrl'
             })
                 .otherwise({
                     redirectTo: '/error'

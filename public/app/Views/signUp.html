@@ -1,0 +1,21 @@
+
+<div class="container-cadastro">
+
+    <div id="cadastro">
+
+        <form >
+
+           <p>Pre sign up now!</p>
+            <fieldset class="clearfix-cadastro">
+                Cooker Name: <p> <span class="fontawesome-userSign"></span><input type="text" ng-model="userSign.name"  placeholder="Cooker Name" ></p>
+                Email: <p> <span class="fontawesome-email"></span><input type="text" ng-model="userSign.email"  placeholder="Email" ></p>
+                Password: <p> <span class="fontawesome-lock"></span>  <input type="password" ng-model="userSign.password" placeholder="********"></p>
+                Confirm Password: <p> <span class="fontawesome-lock"></span>  <input type="password" ng-model="userSign.confirmPass" placeholder="********"></p>
+                <p> <input type="submit" ng-click="signUp()" value="Sign Up" ></p>
+                <p ng-show="signUpReturn == 0">Thank you for sign up! You will receive an email when we finish to cook it =D</p>
+                <p ng-show="signUpReturn == 1">Password not equals, try it again!</p>
+                <p ng-show="signUpReturn == 2">Email is alread in use!</p>
+            </fieldset>
+        </form>
+    </div>
+</div>
